@@ -50,7 +50,7 @@ public class Main {
     }
 }
 
-Prompt: Help me to design code to fit the question 4 criteria 
+Prompt: Help me to design code to fit the question 4 criteria (Question 4. (30 pts.) Design and implement a small smart-campus device system showing both class inheritance (concrete classes extend a common abstract class) and interface implementation.) 
 
 Response: 
 
@@ -60,6 +60,13 @@ public interface Networked {
     void connect();
     void disconnect();
     boolean isConnected();
+}
+
+package org.howard.edu.lsp.midterm.question4;
+
+public interface BatteryPowered {
+    int getBatteryPercent();
+    void setBatteryPercent(int percent);
 }
 
 package org.howard.edu.lsp.midterm.question4;
@@ -177,6 +184,21 @@ public class Camera extends Device implements Networked, BatteryPowered {
     }
 }
 
+prompt: for question 4, door lock etc how does the implement and extend work in this case
 
+response: 
+
+In Question 4, the classes like DoorLock, Thermostat, and Camera demonstrate both inheritance and interface implementation in Java. Here's how it works in this case:
+Extends (Inheritance from Device)
+All three concrete classes DoorLock, Thermostat, and Camera extend the abstract class Device.
+This means they inherit all the fields and methods from Device, such as id, location, heartbeat(), isConnected(), and setConnected().
+They must implement the abstract method getStatus() because Device declares it as abstract.
+This allows the concrete classes to share common functionality while providing their own specific behavior.
+Implements (Interface Implementation)
+DoorLock and Camera implement both Networked and BatteryPowered interfaces.
+Thermostat implements only Networked.
+Implementing an interface means the class must provide concrete implementations for all the methods declared in the interface.
+For example, Networked requires connect(), disconnect(), and isConnected(). BatteryPowered requires getBatteryPercent() and setBatteryPercent().
+This allows the classes to gain specific capabilities (like network connectivity or battery management) without needing multiple inheritance, which Java does not support for classes.
 
 I reviewed the output code from chatgpt, modified where I saw fit,and tested to make sure everything compiled correctly.

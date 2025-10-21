@@ -42,6 +42,17 @@ public class AreaCalculator {
         return side * side;
     }
 }
+prompt: how do you write a try and catch statement?
+
+response: 
+
+try {
+    // Code that might throw an exception
+    int result = 10 / 0; // This will throw an ArithmeticException
+} catch (ArithmeticException e) {
+    // Code to handle the exception
+    System.out.println("Error: " + e.getMessage());
+}
 
 
 After this response, I double checked and tested the code to ensure it worked. I used - https://www.geeksforgeeks.org/java/method-overloading-in-java/ to better understand overloading and change the explanation as I saw fit.   

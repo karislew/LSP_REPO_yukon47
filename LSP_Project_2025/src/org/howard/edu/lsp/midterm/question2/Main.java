@@ -10,7 +10,7 @@ public class Main {
 
         // Example of exception handling
         try {
-            System.out.println("Attempting invalid circle area:");
+            System.out.println("Invalid circle area:");
             System.out.println(AreaCalculator.area(-5.0));
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
